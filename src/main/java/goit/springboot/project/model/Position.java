@@ -15,7 +15,7 @@ public class Position {
     private String positionName;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "position", cascade = CascadeType.ALL)
-    private Set<Employee> employees = new HashSet<Employee>();
+    private Set<Employee> employees = new HashSet<Employee>(0);
 
     public long getId() {
         return id;
