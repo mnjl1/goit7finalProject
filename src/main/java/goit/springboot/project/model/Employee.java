@@ -6,6 +6,7 @@ import javax.persistence.*;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "employee_id", insertable = false, updatable = false)
     private long id;
 
     @Column(name = "first_name")
@@ -13,6 +14,10 @@ public class Employee {
 
     @Column(name = "last_name")
     private String lastName;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id")
+    private Position position;
 
     public Employee(){
 
@@ -46,6 +51,14 @@ public class Employee {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
     }
 
     @Override

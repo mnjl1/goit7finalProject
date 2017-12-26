@@ -14,16 +14,16 @@ public class EmployeeWebController {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    @RequestMapping(value = "/form", method = RequestMethod.GET)
+    @RequestMapping(value = "/employeeform", method = RequestMethod.GET)
     public String employeeForm(Model model){
         model.addAttribute("employee", new Employee());
-        return "form";
+        return "employeeform";
     }
 
-    @RequestMapping(value = "/form", method = RequestMethod.POST)
+    @RequestMapping(value = "/employeeform", method = RequestMethod.POST)
     public String employeeSubmit(@ModelAttribute Employee employee, Model model){
         model.addAttribute("employee", employee);
         employeeRepository.save(employee);
-        return "result";
+        return "employeeresult";
     }
 }
