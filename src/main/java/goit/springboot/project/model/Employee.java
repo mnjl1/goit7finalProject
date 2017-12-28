@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "employee_id", insertable = false, updatable = false)
+    @Column(name = "employee_id")
     private long id;
 
     @Column(name = "first_name")
@@ -16,7 +16,7 @@ public class Employee {
     private String lastName;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "employee_id")
+    @JoinColumn(name = "position_id")
     private Position position;
 
     public Employee(){

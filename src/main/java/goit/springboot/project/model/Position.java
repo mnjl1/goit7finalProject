@@ -9,12 +9,13 @@ import java.util.Set;
 public class Position {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "position_id")
     private long id;
 
     @Column(name = "position")
     private String positionName;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "position", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "position")
     private Set<Employee> employees = new HashSet<Employee>(0);
 
     public long getId() {
