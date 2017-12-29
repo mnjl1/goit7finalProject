@@ -12,11 +12,11 @@ public class Position {
     @Column(name = "position_id")
     private long id;
 
-    @Column(name = "position")
+    @Column(name = "position_name")
     private String positionName;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "position")
-    private Set<Employee> employees = new HashSet<Employee>(0);
+    private Set<Employee> employees;
 
     public long getId() {
         return id;
