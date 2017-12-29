@@ -15,7 +15,7 @@ public class Position {
     @Column(name = "position_name")
     private String positionName;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "position")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "position")
     private Set<Employee> employees;
 
     public long getId() {

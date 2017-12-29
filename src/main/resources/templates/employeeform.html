@@ -10,11 +10,10 @@
     <p>First Name: <input type="text" th:field="*{firstName}" /></p>
     <p>Last Name: <input type="text" th:field="*{lastName}" /></p>
 
-    <select th:field="${position}">
-        <option th:each="position : ${position}"
-                th:value="${position}"
-                th:text="${position.getPositionName()}"
-                th:selected="${position}">
+    <select class="form-control" th:field="${position}">
+        <option th:each="positionlist : ${positions}"
+                th:value="${{positionlist}}"
+                th:text="${positionlist.getPositionName()}">
         </option>
     </select>
 
