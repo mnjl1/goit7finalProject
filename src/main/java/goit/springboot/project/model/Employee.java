@@ -17,7 +17,6 @@ public class Employee {
     private String lastName;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "position_id")
     private Position position;
 
     public Employee(){

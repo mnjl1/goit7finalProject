@@ -24,9 +24,10 @@ public class EmployeeWebController {
 
     @RequestMapping(value = "/employeeform", method = RequestMethod.GET)
     public String employeeForm(Model model){
-        List<Position> positions = (List<Position>) positionRepository.findAll();
+
         model.addAttribute("employee", new Employee());
-        model.addAttribute("position", new Position());
+        //model.addAttribute("position", new Position());
+        List<Position> positions = (List<Position>) positionRepository.findAll();
         model.addAttribute("positions", positions);
         return "employeeform";
     }
