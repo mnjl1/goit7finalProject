@@ -5,28 +5,31 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1>Customer Form</h1>
+<h1>Employee Form</h1>
 
 <form action="#" th:action="@{/employeeform.html}" th:object="${employee}" method="post">
+    <table>
         <p>First Name: <input type="text" th:field="*{firstName}" /></p>
-            <p>Last Name: <input type="text" th:field="*{lastName}" /></p>
+        <p>Last Name: <input type="text" th:field="*{lastName}" /></p>
 
-            <select class="form-control" th:field="*{position}">
-                <option th:each="positionlist : ${positions}"
-                        th:value="${{positionlist.getId()}}"
-                        th:utext="${positionlist.getPositionName().toString()}">
-                </option>
-            </select>
+        <select class="form-control" th:field="*{position}">
+            <option th:each="positionlist : ${positions}"
+                    th:value="${{positionlist.getId()}}"
+                    th:utext="${positionlist.getPositionName().toString()}">
+            </option>
+        </select>
 
 
-            <select class="form-control" th:field="*{role}">
-                <option th:each="roleList : ${roles}"
-                        th:value="${{roleList.getId()}}"
-                        th:utext="${roleList.getRoleName().toString()}">
-                </option>
-            </select>
+        <select class="form-control" th:field="*{role}">
+            <option th:each="roleList : ${roles}"
+                    th:value="${{roleList.getId()}}"
+                    th:utext="${roleList.getRoleName().toString()}">
+            </option>
+        </select>
 
-            <p>Salary: <input type="text" th:field="*{salary}" /></p>
+        <p>Salary: <input type="text" th:field="*{salary}" /></p>
+    </table>
+
 
             <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 
