@@ -11,8 +11,8 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "event")
-    private String event;
+    @Column(name = "eventName")
+    private String eventName;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "event")
     private Set<Employee> employees;
@@ -23,7 +23,7 @@ public class Event {
 
     public Event(int id, String event, Set<Employee> employees) {
         this.id = id;
-        this.event = event;
+        this.eventName = event;
         this.employees = employees;
     }
 
@@ -36,11 +36,11 @@ public class Event {
     }
 
     public String getEvent() {
-        return event;
+        return eventName;
     }
 
-    public void setEvent(String event) {
-        this.event = event;
+    public void setEventName(String event) {
+        this.eventName = event;
     }
 
     public Set<Employee> getEmployees() {
@@ -51,11 +51,15 @@ public class Event {
         this.employees = employees;
     }
 
+    public String getEventName() {
+        return eventName;
+    }
+
     @Override
     public String toString() {
         return "Event{" +
                 "id=" + id +
-                ", event='" + event + '\'' +
+                ", event='" + eventName + '\'' +
                 ", employees=" + employees +
                 '}';
     }

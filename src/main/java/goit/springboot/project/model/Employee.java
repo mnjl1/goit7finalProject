@@ -42,9 +42,16 @@ public class Employee {
 
     }
 
-    public Employee(String firstName, String lastName, String email,
-                    Department department, Position position,
-                    long salary, Role role, Event event, Status status) {
+    public Employee(long id, String firstName, String lastName) {
+        this.id=id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Employee(Long id, String firstName, String lastName, String email,
+                    Department department, Position position, long salary,
+                    Role role, Event event, Status status) {
+        this.id=id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

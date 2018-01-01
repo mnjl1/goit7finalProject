@@ -6,8 +6,8 @@
 </head>
 <body>
 <h1>Event Form</h1>
-<form action="#" th:action="@{/eventform.html.html}" th:object="${event}" method="post">
-    <p>Employee position: <input type="text" th:field="*{event}" /></p>
+<form action="#" th:action="@{/eventform.html}" th:object="${event}" method="post">
+    <p>Employee position: <input type="text" th:field="*{eventName}" /></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 </body>
