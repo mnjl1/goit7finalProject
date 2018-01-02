@@ -5,16 +5,15 @@ import goit.springboot.project.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 
 @RestController
 public class EmployeeRestController {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    @RequestMapping("/employee")
-    public Employee getEmployee(@RequestParam long id){
+    @GetMapping("/employee")
+    public Employee getEmployee(@RequestParam(value = "id") long id){
         return employeeRepository.findOne(id);
     }
 
