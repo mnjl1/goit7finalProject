@@ -39,7 +39,10 @@ public class Employee {
 
 
     public Employee(){
+    }
 
+    public Employee(String lastName) {
+        this.lastName = lastName;
     }
 
     public Employee(long id, String firstName, String lastName) {

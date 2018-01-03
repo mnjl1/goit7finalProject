@@ -17,6 +17,11 @@ public class EmployeeRestController {
         return employeeRepository.findOne(id);
     }
 
+    @RequestMapping("/employeelastname")
+    public Employee getLastName(@RequestParam(value="name") String lastName) {
+        return new Employee(lastName);
+    }
+
 //    @RequestMapping("/allemployees")
 //    public List<Employee> getAllEmployees(){
 //        return (List<Employee>) employeeRepository.findAll();
