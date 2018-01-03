@@ -5,8 +5,6 @@ import goit.springboot.project.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 @RestController
 public class EmployeeRestController {
     @Autowired
@@ -18,8 +16,8 @@ public class EmployeeRestController {
     }
 
     @RequestMapping("/employeelastname")
-    public Employee getLastName(@RequestParam(value="name") String lastName) {
-        return new Employee(lastName);
+    public Iterable<Employee> getLastName(@RequestParam(value="name") String lastName) {
+        return employeeRepository.findAll();
     }
 
 //    @RequestMapping("/allemployees")
